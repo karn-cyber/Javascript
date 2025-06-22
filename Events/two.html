@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async code </title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Neelanshu Karn");
+    // },2000)
+    // setInterval(function(){
+    //     console.log("Neelanshu Karn");
+
+    // },2000)
+
+    const sayNeel = function(){
+        console.log("Neelanshu Karn");
+
+    }
+    const changeText = function(){document.querySelector('h1').innerHTML = "best JS series"}
+    const changeMe = setTimeout(changeText,2000);
+
+    //clearTimeout() requires reference always
+    const date = new Date();
+    console.log(date);
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+
+        console.log("STOPPED at " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds());
+    })
+    
+</script>
+</html>
